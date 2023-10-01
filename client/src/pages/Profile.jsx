@@ -20,6 +20,7 @@ export default function Profile() {
     if (file) {
       handleFileUpload(file);
     }
+    // eslint-disable-next-line
   }, [file]);
 
   const handleFileUpload = () => {
