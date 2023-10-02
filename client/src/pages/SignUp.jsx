@@ -7,7 +7,7 @@ export default function SignUp() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -19,7 +19,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export default function SignUp() {
     } finally {
       setLoading(false);
       setError(null);
-      navigate('/sign-in')
+      navigate("/sign-in");
     }
   };
 
